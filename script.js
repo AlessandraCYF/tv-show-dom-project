@@ -5,16 +5,20 @@ function setup() {
 
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
-   // rootElem.textContent = `Got ${episodeList.length} episode(s)`;
+ 
    episodeList.map((episode) => {
     let cardElt = document.createElement("div");
     let titleElt = document.createElement("h2");
     let imgElt = document.createElement("div");
     let textElt = document.createElement("div");
+
     cardElt.className = "card";
     titleElt.className = "card_title";
     imgElt.className = "card_img";
     textElt.className = "card_text";
+    titleElt.textContent = episode.name;
+    imgElt.style.backgroundImage = `url(${episode.image.original})`;
+    textElt.innerHTML = episode.summary;
 
     cardElt.append(titleElt, imgElt, textElt);
     rootElem.appendChild(cardElt);
