@@ -17,7 +17,7 @@ function makePageForEpisodes(episodeList) {
     imgElt.className = "card_img";
     textElt.className = "card_text";
     titleElt.textContent = episode.name;
-    imgElt.style.backgroundImage = `url(${episode.image.original})`;
+    imgElt.style.backgroundImage = `url(${episode.image.medium})`;
     textElt.innerHTML = episode.summary;
 
     cardElt.append(titleElt, imgElt, textElt);
